@@ -54,13 +54,12 @@ def index():
 		X = sequence.pad_sequences(url_int_tokens, maxlen=max_len, padding='post')
 		with graph.as_default():
 			prediction = model.predict(X)
-
 			if prediction[0] > 0.50:
 				# prediction = "MALICIOUS"
-				return render_template("success.html", url=form.url.data, status="Malicious")
+				return render_template("success.html", url=form.url.data, status="Malicious", value = prediction[0])
 			else:
 				# prediction = "NOT MALICIOUS"
-				return render_template("success.html", url=form.url.data, status="Not Malicious")
+				return render_template("success.html", url=form.url.data, status="Not Malicious", value = prediction[0])
 
 	# return render_template('success.html', url = form.url.data, prediction = prediction)
 	return render_template('index.html', form=form)

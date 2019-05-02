@@ -1,10 +1,25 @@
 <html>
-<head>
-	<title> URL submitted successfully</title>
-</head>
+<style>
+.content {
+  max-width: 500px;
+  margin: auto;
+}
+.header {
+  padding: 60px;
+  text-align: center;
+  background: #1abc9c;
+  color: black;
+  font-size: 30px;
+}
+</style>
+<div class="header">
+<div class="content">
 <body>
 	<p> URL: {{ url }} </p>
 	<p> Prediction: {{ status }}
+	<p> Maliciousness: {{ value }}
 </body>
+</div>
+</div>
 </html>
 

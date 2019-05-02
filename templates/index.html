@@ -1,13 +1,33 @@
 {% from "_formhelpers.html" import render_field %}
 <html>
+
+<style>
+.content {
+  max-width: 500px;
+  margin: auto;
+}
+.center {
+  margin: auto;
+  width: 50%;
+  border: 3px solid green;
+  padding: 10px;
+}
+body {
+  background: lightgreen;
+  margin-right: 100px;
+}
+</style>
+<div class="center">
 <head>
-<title>Malicious URL Detection</title>
+
+<title>Malicious URL Detection (ThirdEye)</title>
+
 </head>
 <body>
 	<h3> Malicious URL Detection Using Machine Learning </h3>
 	
-	<p> Current Model - Neural Network. </p>
-	<p> Please enter URL with protocol specified i.e https://www.youtube.com
+	<p> Current Model - LSTM </p>
+	<p> Please enter a valid URL.
 	<form method="POST" action="/">
 	   <dl>
 	    {{ form.csrf_token }}
@@ -17,4 +37,5 @@
 	</form>
 
 </body>
+</div>
 </html>
