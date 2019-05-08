@@ -8,13 +8,17 @@ def start():
 	loaded_model_json = json_file.read()
 	json_file.close()
 	loaded_model = model_from_json(loaded_model_json)
-	
+	#global model
 	#load woeights into new model
-	loaded_model.load_weights("model.h5")
+	
+	loaded_model.load_weights("weights.best.hdf5")
+	
+	#model.load_model('weights.best.hdf5')
 	print("Loaded Model from disk")
 
 	#compile and evaluate loaded model
 	loaded_model.compile(loss='binary_crossentropy',optimizer='adam',metrics=['accuracy'])
+	#model.compile(loss='binary_crossentropy',optimizer='adam',metrics=['accuracy'])
 	#loss,accuracy = model.evaluate(X_test,y_test)
 	#print('loss:', loss)
 	#print('accuracy:', accuracy)
